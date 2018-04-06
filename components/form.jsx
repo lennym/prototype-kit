@@ -27,6 +27,10 @@ class Form extends Page {
     return <Component { ...field } key={ field.name } />
   }
 
+  pageTitle() {
+    return null;
+  }
+
   submit() {
     return this.props.submit || 'Submit';
   }
@@ -44,7 +48,10 @@ class Form extends Page {
     const fields = this.fields().map((f, i) => {
       return Object.assign({ type: 'text', name: `field-${i}` }, f);
     });
+    const title = this.pageTitle();
+
     return <React.Fragment>
+      { title && <h1>{ title }</h1> }
       <form onSubmit={(e) => this._onSubmit(e)}>
         {
           fields.map(field => this.renderField(field))
