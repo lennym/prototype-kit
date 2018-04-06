@@ -4,7 +4,7 @@ A toolkit for rapid prototyping of govuk themed services in react.
 
 ## Prerequisites
 
-Using the toolkit requires at least version 8 of node. You can install it [https://nodejs.org/](here).
+Using the toolkit requires at least version 8 of node. You can install it [here](https://nodejs.org/).
 
 ## Getting started
 
