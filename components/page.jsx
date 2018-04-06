@@ -23,6 +23,7 @@ class Page extends React.Component {
         <div id="page-container">
           { this.content() }
         </div>
+        <script src={`/assets/js/${this.props.page}.js`}></script>
       </main>
     </GovUK>
   }

@@ -67,8 +67,8 @@ const start = ({ compile }) => {
 start({ compile: true })
   .then(() => {
     if (args.watch) {
-      const watcher = chokidar.watch([dir, path.resolve(__dirname, '..')], {
-        ignored: ['.DS_Store', /node_modules/, /.git/],
+      const watcher = chokidar.watch(dir, {
+        ignored: ['.DS_Store', /node_modules/, /.git/, /assets\/js/],
         ignoreInitial: true
       });
 
