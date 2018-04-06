@@ -23,8 +23,12 @@ const PORT = process.env.PORT || 0;
 let server;
 
 const shouldRestart = file => {
-  if (path.extname(file).match(/.js(x)?/)) {
-    restart(file);
+  switch (path.extname(file)) {
+    case '.jsx':
+      return Compiler(rootDir, file)
+        .then(restart(file));
+    case '.js':
+      return restart(file);
   }
 };
 
