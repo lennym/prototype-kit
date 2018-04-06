@@ -45,7 +45,6 @@ class Form extends Page {
       return Object.assign({ type: 'text', name: `field-${i}` }, f);
     });
     return <React.Fragment>
-      <h1>{ this.title() }</h1>
       <form onSubmit={(e) => this._onSubmit(e)}>
         {
           fields.map(field => this.renderField(field))
