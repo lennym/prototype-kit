@@ -1,6 +1,5 @@
 const React = require('react');
-const GovUK = require('govuk-react-components/components/layout');
-const PhaseBanner = require('govuk-react-components/components/phase-banner');
+const Layout = require('./layout')
 
 class Page extends React.Component {
 
@@ -13,19 +12,9 @@ class Page extends React.Component {
   }
 
   render() {
-    return <GovUK
-      propositionHeader={this.title()}
-      title={this.title()}
-      stylesheets={['/govuk/elements.css', '/assets/css/default.css', `/assets/css/${this.props.page}.css`]}
-    >
-      <main className="main" id="content">
-        <PhaseBanner phase="prototype" />
-        <div id="page-container">
-          { this.content() }
-        </div>
-        <script src={`/assets/js/${this.props.page}.js`}></script>
-      </main>
-    </GovUK>
+    return <Layout title={this.title()} page={this.props.page}>
+      { this.content() }
+    </Layout>
   }
 }
 
