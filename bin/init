@@ -1,0 +1,6 @@
+#! /usr/bin/env sh
+
+npm init -y
+npm install prototype-kit
+mkdir -p pages
+mkdir -p assets/css
