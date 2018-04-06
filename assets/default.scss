@@ -23,3 +23,18 @@ $path: "/govuk/images/";
 
 // Functions
 @import "govuk_frontend_toolkit/stylesheets/url-helpers";
+
+@import "govuk-elements-sass/public/sass/elements";
+
+h1 {
+  @extend .heading-large;
+}
+h2 {
+  @extend .heading-medium;
+}
+h3 {
+  @extend .heading-small;
+}
+h4 {
+  @extend .heading-small;
+}
