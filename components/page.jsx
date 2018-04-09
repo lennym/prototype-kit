@@ -16,7 +16,7 @@ class Page extends React.Component {
   }
 
   render() {
-    return <Layout title={this.title()} page={this.props.page}>
+    return <Layout {...this.props} title={this.title()} page={this.props.page}>
       { this.content() }
     </Layout>
   }
