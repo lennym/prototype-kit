@@ -144,3 +144,4 @@ export default Index;
 * [ ] Add some persistent state so that form inputs can be re-used later on
 * [ ] Convert some of the built-in components from the original prototyping kit
 * [ ] More components
+* [ ] Add option to easily put prototype behind basic auth
