@@ -6,6 +6,8 @@ const Select = require('govuk-react-components/components/forms/select');
 const Date = require('govuk-react-components/components/forms/date');
 const { Button } = require('govuk-react-components/components/button');
 
+const CheckboxGroup = props => <RadioGroup {...props} type="checkbox" />
+
 const Page = require('./page');
 
 class Form extends Page {
@@ -16,11 +18,11 @@ class Form extends Page {
 
   renderField(field) {
     const Component = {
-      text: Input,
       radio: RadioGroup,
+      checkbox: CheckboxGroup,
       select: Select,
       date: Date
-    }[field.type];
+    }[field.type] || Input;
     if (!Component) {
       return null;
     }
@@ -52,7 +54,7 @@ class Form extends Page {
 
     return <React.Fragment>
       { title && <h1>{ title }</h1> }
-      <form onSubmit={(e) => this._onSubmit(e)}>
+      <form onSubmit={e => this._onSubmit(e)}>
         {
           fields.map(field => this.renderField(field))
         }
@@ -62,5 +64,12 @@ class Form extends Page {
   }
 
 }
+
+Form.Input = Input;
+Form.RadioGroup = RadioGroup;
+Form.CheckboxGroup = RadioGroup;
+Form.Select = Select;
+Form.Data = Date;
+Form.Button = Button;
 
 module.exports = Form;
