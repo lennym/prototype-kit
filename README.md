@@ -134,3 +134,7 @@ class Index extends Page {
 
 export default Index;
 ```
+
+## Components
+
+[Documentation for built-in components](./components.md)

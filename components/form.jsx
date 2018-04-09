@@ -52,7 +52,7 @@ class Form extends Page {
 
     return <React.Fragment>
       { title && <h1>{ title }</h1> }
-      <form onSubmit={(e) => this._onSubmit(e)}>
+      <form onSubmit={e => this._onSubmit(e)}>
         {
           fields.map(field => this.renderField(field))
         }
@@ -62,5 +62,11 @@ class Form extends Page {
   }
 
 }
+
+Form.Input = Input;
+Form.RadioGroup = RadioGroup;
+Form.Select = Select;
+Form.Data = Date;
+Form.Button = Button;
 
 module.exports = Form;
