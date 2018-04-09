@@ -138,3 +138,9 @@ export default Index;
 ## Components
 
 [Documentation for built-in components](./components.md)
+
+## Roadmap
+
+* [ ] Add some persistent state so that form inputs can be re-used later on
+* [ ] Convert some of the built-in components from the original prototyping kit
+* [ ] More components
