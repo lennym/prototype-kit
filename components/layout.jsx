@@ -19,6 +19,7 @@ class Layout extends React.Component {
         <div id="page-container">
           { this.props.children }
         </div>
+        <script dangerouslySetInnerHTML={{__html: `window.INITIAL_STATE=${JSON.stringify(this.props)}`}} />
         <script src={`/assets/js/${this.props.page}.js`}></script>
       </main>
     </GovUK>

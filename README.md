@@ -101,3 +101,36 @@ class FormPage extends Form {
 
 export default FormPage;
 ```
+
+## Data
+
+You can load mock data into your prototypes by adding CSV or JSON files to a `data` directory in your prototype.
+
+This data will then be parsed and exposed into your prototype as a `data` prop, with sub-objects corresponding to the file names.
+
+For example, if you add `data/user.json` to your project with the following content:
+
+```json
+{
+  "name": "Joe Bloggs",
+  "dob": "1990-01-01"
+}
+```
+
+Then you can use the data in your page as follows:
+
+```jsx
+import React from 'react';
+import { Page } from 'prototype-kit';
+
+class Index extends Page {
+
+  content() {
+    const user = this.props.data.user;
+    return <h1>User { user.name } was born on { user.dob }.</h1>
+  }
+
+}
+
+export default Index;
+```

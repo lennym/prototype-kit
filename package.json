@@ -27,6 +27,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "chokidar": "^2.0.3",
+    "csv-parse": "^2.2.0",
     "express": "^4.16.3",
     "express-react-views": "^0.10.5",
     "glob": "^7.1.2",

@@ -3,6 +3,6 @@ const { render } = require('react-dom');
 const Component = require('{{page}}').default;
 
 render(
-  <Component />,
+  <Component { ...window.INITIAL_STATE }/>,
   document.getElementById('page-container')
 );
