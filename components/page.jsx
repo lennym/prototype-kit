@@ -7,6 +7,10 @@ class Page extends React.Component {
     return this.props.title || 'Prototype Kit';
   }
 
+  redirect(url) {
+    location.href = url;
+  }
+
   content() {
     return null;
   }
