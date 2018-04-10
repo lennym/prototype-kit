@@ -3,4 +3,5 @@
 npm init -y
 npm install prototype-kit@latest
 mkdir -p pages
+mkdir -p data
 mkdir -p assets/css

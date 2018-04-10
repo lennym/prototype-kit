@@ -17,6 +17,27 @@ if (cmd === 'init') {
   });
   return;
 }
+if (cmd === 'page') {
+  const page = args._[1];
+  if (!page) {
+    throw new Error(`Missing page name argument`);
+  }
+  cp.spawn(path.resolve(__dirname, './page'), {
+    stdio: 'inherit',
+    cwd: process.cwd(),
+    env: {
+      SRC: path.resolve(__dirname, '../templates/page.jsx'),
+      PAGE: page
+    }
+  }).on('exit', code => {
+    if (code) {
+      console.log(`Failed to create a new page. Check that ./pages/${page}.jsx does not already exist.`);
+      return process.exit(code);
+    }
+    console.log(`Page created at /${page}`);
+  });
+  return;
+}
 
 if (cmd === 'run') {
   Runner(cwd, { watch: args.watch });

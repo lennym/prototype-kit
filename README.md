@@ -49,6 +49,14 @@ Any changes you make will be automatically compiled, so there's no need to do an
 
 ## Adding pages
 
+To add a new page easily, you can run the following command:
+
+```
+npx prototype-kit page <page-name>
+```
+
+This will create a new page for you at `http://localhost:3000/<page-name>` by creating a template file in your pages directory. You can then edit the content of this file as you require.
+
 Any `.jsx` files you create in your `pages` directory will be automatically served, with the file names mapped to urls. So if you create a new file `my-page.jsx` then it will be visible at `http://localhost:3000/my-page`.
 
 Any content returns by the `content` method of your page component will be rendered into the page.
