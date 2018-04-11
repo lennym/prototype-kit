@@ -67,7 +67,7 @@ class Form extends Page {
 
 Form.Input = Input;
 Form.RadioGroup = RadioGroup;
-Form.CheckboxGroup = RadioGroup;
+Form.CheckboxGroup = CheckboxGroup;
 Form.Select = Select;
 Form.Data = Date;
 Form.Button = Button;
