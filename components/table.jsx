@@ -1,5 +1,5 @@
 const React = require('react');
-const { intersection } = require('lodash');
+const { intersection, sortBy } = require('lodash');
 
 class Table extends React.Component {
 
@@ -27,6 +27,10 @@ class Table extends React.Component {
 
   render() {
     const columns = this.getColumns();
+    let dataset = this.props.dataset;
+    if (this.props.sort) {
+      dataset = sortBy(dataset, this.props.sort);
+    }
     return <table>
       <thead>
         <tr>
@@ -35,7 +39,7 @@ class Table extends React.Component {
       </thead>
       <tbody>
         {
-          this.props.dataset.map(row => (
+          dataset.map(row => (
             <tr>
               { columns.map(c => <td>{ this.format(c, row[c], row) }</td>) }
             </tr>

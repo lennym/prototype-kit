@@ -233,6 +233,8 @@ Renders a dataset in an html table.
 
 For example, if you have CSV data in `./data/places.csv`, this will render that data into a table.
 
+An optional `sort` property can be passed, which will sort the dataset by the property specified.
+
 ```jsx
 import React from 'react';
 import { Page, Table } from 'prototype-kit';
@@ -241,7 +243,10 @@ class DataTable extends Page {
 
   content() {
     return <div>
-      <Table dataset={ this.props.data.places } />
+      <Table
+        dataset={ this.props.data.places }
+        sort="name"
+        />
     </div>
   }
 
@@ -262,7 +267,10 @@ class DataTable extends Page {
 
   content() {
     return <div>
-      <Table dataset={ this.props.data.places } columns={ ['name', 'location'] } />
+      <Table
+        dataset={ this.props.data.places }
+        columns={ ['name', 'location'] }
+        />
     </div>
   }
 
