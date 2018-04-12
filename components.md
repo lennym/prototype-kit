@@ -75,7 +75,7 @@ import { Form } from 'prototype-kit';
 class Login extends Form {
 
   // redirect to another page on form submission
-  onSubmit() {
+  onSubmit(values) {
     this.redirect('/home');
   }
 
@@ -91,8 +91,8 @@ class Login extends Form {
 
   fields() {
     return [
-      { label: 'Username' },
-      { type: 'password', label: 'Password' }
+      { name: 'username', label: 'Username' },
+      { name: 'password', type: 'password', label: 'Password' }
     ]
   }
 

@@ -12,6 +12,10 @@ const Page = require('./page');
 
 class Form extends Page {
 
+  componentDidMount() {
+    this.setState({ form: {} });
+  }
+
   fields() {
     return []
   }
@@ -26,7 +30,12 @@ class Form extends Page {
     if (!Component) {
       return null;
     }
-    return <Component { ...field } key={ field.name } />
+    return <Component { ...field } key={ field.name } onChange={e => this.update(field.name, e.target.value)} />
+  }
+
+  update(field, value) {
+    const form = Object.assign({}, this.state.form, { [field]: value });
+    this.setState({ form });
   }
 
   pageTitle() {
@@ -39,7 +48,7 @@ class Form extends Page {
 
   _onSubmit(e) {
     e.preventDefault();
-    this.onSubmit();
+    this.onSubmit(this.state.form);
   }
 
   onSubmit() {
