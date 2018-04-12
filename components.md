@@ -293,5 +293,59 @@ class DataTable extends Page {
 export default DataTable;
 ```
 
+You can format data in table cells by passing a `formatter` function, which takes the key, value and complete data row as arguments.
 
+Simple example that renders a `-` into cells with no value:
 
+```jsx
+import React from 'react';
+import { Page, Table } from 'prototype-kit';
+
+const defaultValue = (key, value) => value || '-';
+
+class DataTable extends Page {
+
+  content() {
+    return <div>
+      <Table
+        dataset={ this.props.data.places }
+        formatter={ defaultValue }
+        />
+    </div>
+  }
+
+}
+
+export default DataTable;
+```
+
+More complex example that turns the name into a link:
+
+```jsx
+import React from 'react';
+import { Page, Table } from 'prototype-kit';
+
+const nameLink = (key, value, item) => {
+  switch (key) {
+    case 'name':
+      return <a href={`/profile/${item.id}`>{ item.name }</a>;
+    default:
+      return value;
+  }
+};
+
+class DataTable extends Page {
+
+  content() {
+    return <div>
+      <Table
+        dataset={ this.props.data.places }
+        formatter={ nameLink }
+        />
+    </div>
+  }
+
+}
+
+export default DataTable;
+```

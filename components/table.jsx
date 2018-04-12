@@ -18,6 +18,13 @@ class Table extends React.Component {
     return key;
   }
 
+  format(key, value, item) {
+    if (this.props.formatter) {
+      return this.props.formatter(key, value, item);
+    }
+    return value;
+  }
+
   render() {
     const columns = this.getColumns();
     return <table>
@@ -30,7 +37,7 @@ class Table extends React.Component {
         {
           this.props.dataset.map(row => (
             <tr>
-              { columns.map(c => <td>{ row[c] }</td>) }
+              { columns.map(c => <td>{ this.format(c, row[c], row) }</td>) }
             </tr>
           ))
         }
