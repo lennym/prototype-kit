@@ -1,6 +1,8 @@
 const React = require('react');
 const Layout = require('./layout')
 
+const Breadcrumb = require('./breadcrumb');
+
 class Page extends React.Component {
 
   title() {
@@ -15,8 +17,13 @@ class Page extends React.Component {
     return null;
   }
 
+  breadcrumb() {
+    return null;
+  }
+
   render() {
     return <Layout {...this.props} title={this.title()} page={this.props.page}>
+      <Breadcrumb crumbs={ this.breadcrumb() }/>
       { this.content() }
     </Layout>
   }
