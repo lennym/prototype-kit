@@ -1,6 +1,6 @@
 {
   "name": "prototype-kit",
-  "version": "1.13.0",
+  "version": "1.13.1",
   "description": "",
   "main": "index.js",
   "style": "./assets/default.scss",
