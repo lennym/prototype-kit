@@ -4,13 +4,11 @@ const PhaseBanner = require('govuk-react-components/components/phase-banner');
 
 class Layout extends React.Component {
 
-  title() {
-    return this.props.title || 'Prototype Kit';
-  }
-
   render() {
+    const titleLink = this.props.titleLink || '/';
     return <GovUK
       propositionHeader={this.props.title}
+      propositionHeaderLink={typeof this.props.title === 'string' ? titleLink : null}
       title={this.props.title}
       stylesheets={['/govuk/elements.css', '/assets/css/default.css', `/assets/css/${this.props.page}.css`]}
     >
