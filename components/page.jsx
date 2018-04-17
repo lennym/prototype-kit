@@ -22,7 +22,7 @@ class Page extends React.Component {
   }
 
   render() {
-    return <Layout {...this.props} title={this.props.title} page={this.props.page}>
+    return <Layout {...this.props} title={this.title()} pagetitle={this.props.title} page={this.props.page}>
       <Breadcrumb crumbs={ this.breadcrumb() }/>
       { this.content() }
     </Layout>

@@ -9,7 +9,7 @@ class Layout extends React.Component {
     return <GovUK
       propositionHeader={this.props.title}
       propositionHeaderLink={typeof this.props.title === 'string' ? titleLink : null}
-      title={this.props.title}
+      title={this.props.pagetitle}
       stylesheets={['/govuk/elements.css', '/assets/css/default.css', `/assets/css/${this.props.page}.css`]}
     >
       <main className="main" id="content">
